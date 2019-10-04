@@ -22,7 +22,7 @@ Here are detailed instructions about Efficiency Prize stage of Severstal: Steel 
 
 ### Hardware specifications <a name="hwspec"></a>
 
-Docker containers provided by participants runs on following hardware configuration.
+Docker containers provided by participants run on following hardware configuration.
 
 Intel(R) Core(TM) i7-8700K CPU @ 3.70GHz  
 GeForce GTX 1080 Ti, Driver Version: 390.67  

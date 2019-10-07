@@ -1,6 +1,6 @@
 # Instructions for Efficiency Prize competition
 
-Here are detailed instructions about Efficiency Prize stage of Severstal: Steel Defect Detection challenge. 
+Here are detailed instructions about Efficiency Prize stage for Severstal: Steel Defect Detection challenge. 
 
 ### Table of content
 

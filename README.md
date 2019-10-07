@@ -46,16 +46,24 @@ Repository contains two folders:
 4. Now you should wrap you inference code for Efficiency scoring. Open *app.py* template and place your inference code into `app()` function. 
 5. Then you should modify *Dockerfile* template. Open *Dockerfile* template and place commands to install necessary libs and dependencies there. 
 6. Open terminal and change dir to *template* folder:  
-    `$ cd path_to_template_folder`
+    ```bash
+    $ cd path_to_template_folder
+    ```
 7. Build Docker image:  
-    `$ sudo docker build -f Dockerfile -t your_docker_image_name .`
+    ```bash
+    $ sudo docker build -f Dockerfile -t your_docker_image_name .
+    ```
 
 **How to test your Docker image:**  
 1. To test your Docker container with GPU usage you should install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) first.
 2. Put test images to some path *your_test_images_path*.
 3. To run your Docker container use command with specified *your_test_images_path* and *your_submission_path*:  
     - *on GPU*:   
-    `$ sudo docker run --rm -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp --device=/dev/nvidiactl --device=/dev/nvidia-uvm --device=/dev/nvidia0 --volume-driver nvidia-docker your_docker_image_name`
+    ```bash
+    $ sudo docker run --rm -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp --device=/dev/nvidiactl --device=/dev/nvidia-uvm --device=/dev/nvidia0 --volume-driver nvidia-docker your_docker_image_name
+    ```
     - *on CPU*:  
-    `$ sudo docker run --rm -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp your_docker_image_name`  
+    ```bash
+    $ sudo docker run --rm -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp your_docker_image_name
+    ```  
 4. If app.py runs successfully, you will see *submission.csv* in *your_submission_path*.

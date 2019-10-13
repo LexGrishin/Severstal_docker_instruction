@@ -14,7 +14,7 @@ Here are detailed instructions about Efficiency Prize stage for Severstal: Steel
  - Participants should submit to Severstal Docker image of their solution and inference code with Dockerfile from which Docker image was built (see [instruction](#instructions)).
  - Participants are allowed to submit a different code than the one that places them in the Top 50, as long as that solution also scores within the Top 50.
  - Submission deadline for the Efficiency Prize is 11:59 PM UTC November 10, 2019.
- - Participant who provided solution that gets the fastes inference on test images and still scores within the Top 50 is declared the winner of Efficiency Prize.
+ - Participant who provided solution that gets the fastest inference on test images and still scores within the Top 50 is declared the winner of Efficiency Prize.
  - The winner should deliver to Severstal the final model's software code as used to generate the winning Submission and associated documentation.
  - Main competition [Rules](https://www.kaggle.com/c/severstal-steel-defect-detection/rules) also apply.
  - Severstal will post all of the results of the evaluations for the Efficiency Prize in the forum for the Competition.

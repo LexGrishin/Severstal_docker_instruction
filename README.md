@@ -45,7 +45,7 @@ Repository contains two folders:
 3. Put your solution code, model weights and all necessary files into *template* folder.
 4. Now you should wrap you inference code for Efficiency scoring. Open *app.py* template and place your inference code into `app()` function. 
 5. Then you should modify *Dockerfile* template. Open *Dockerfile* template and place commands to install necessary libs and dependencies there. 
-6. Open terminal and change dir to *template* folder. Replace *path_to_template_folder* with path to *template* folder and run command: 
+6. Open terminal and change dir to *template* folder with following command. Replace *path_to_template_folder* with path to *template* folder. 
     ```bash
     $ cd path_to_template_folder
     ```
@@ -57,7 +57,7 @@ Repository contains two folders:
 **How to test your Docker image:**  
 1. To test your Docker container with GPU usage you should install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) first.
 2. Put test images to some path *your_test_images_path*.
-3. To run your Docker container replace *your_test_images_path* with path to some test images, *your_submission_path* with path where *submission.csv* to be saved and run one of following commands:  
+3. To run Docker container from your Docker image use one of the following commands. Replace *your_test_images_path* with path to some test images, *your_submission_path* with path where *submission.csv* to be saved and *your_docker_image_name* with the name you chose for your Docker image.  
     - *To test container on GPU*:   
     ```bash
     $ sudo docker run -e MODEL_RUN_DEVICE='cuda:0' -it --gpus all -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp your_docker_image_name

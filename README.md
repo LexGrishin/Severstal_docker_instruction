@@ -45,7 +45,7 @@ Repository contains two folders:
 3. Put your solution code, model weights and all necessary files into *template* folder.
 4. Now you should wrap you inference code for Efficiency scoring. Open *app.py* template and place your inference code into `app()` function. 
 5. Then you should modify *Dockerfile* template. Open *Dockerfile* template and place commands to install necessary libs and dependencies there. 
-6. Open terminal and change dir to *template* folder. Replace *path_to_template_folder* with your path and run command:  
+6. Open terminal and change dir to *template* folder. Replace *path_to_template_folder* with path to *template* folder and run command: 
     ```bash
     $ cd path_to_template_folder
     ```

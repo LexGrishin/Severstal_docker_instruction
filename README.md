@@ -64,6 +64,6 @@ Repository contains two folders:
     ```
     - *To test container on CPU*:  
     ```bash   
-    $ sudo docker run -e MODEL_RUN_DEVICE='cpu'  --rm -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp your_docker_image_name
+    $ sudo docker run -e MODEL_RUN_DEVICE='cpu' --rm -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp your_docker_image_name
     ```  
 4. If *app.py* runs successfully, you will see *submission.csv* in *your_submission_path*.

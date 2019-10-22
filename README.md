@@ -37,7 +37,7 @@ This instruction is intended to help kagglers to build Docker image for their so
 
 Repository contains two folders:
 - *template* : Contains Dockerfile template and necessary code to wrap your solution for Efficiency scoring. Use it to build your own Docker image.
-- *example* : Contains an example of using *template* to package up a dummy-model into Docker image which successfully runs on our hardware. 
+- *example* : Contains an example of using *template* to package up a dummy-model into Docker image which successfully runs on our hardware configuration. Example also was tested on AWS Deep Learning AMI K80 and on laptop with Core(TM) i7 CPU/GeForce GTX 860M/Ubuntu 18.04.3.
 
 **Steps to package up your solution into Docker image:**
 1. Install [Docker](https://docs.docker.com/install/) on your PC. Version 19.03 is required.
@@ -45,11 +45,11 @@ Repository contains two folders:
 3. Put your solution code, model weights and all necessary files into *template* folder.
 4. Now you should wrap you inference code for Efficiency scoring. Open *app.py* template and place your inference code into `app()` function. 
 5. Then you should modify *Dockerfile* template. Open *Dockerfile* template and place commands to install necessary libs and dependencies there. 
-6. Open terminal and change dir to *template* folder:  
+6. Open terminal and change dir to *template* folder. Replace *path_to_template_folder* with your path and run command:  
     ```bash
     $ cd path_to_template_folder
     ```
-7. Build Docker image:  
+7. Replace *your_docker_image_name* with some name and build Docker image with command:  
     ```bash
     $ sudo docker build -f Dockerfile -t your_docker_image_name .
     ```
@@ -57,12 +57,12 @@ Repository contains two folders:
 **How to test your Docker image:**  
 1. To test your Docker container with GPU usage you should install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) first.
 2. Put test images to some path *your_test_images_path*.
-3. To run your Docker container use command with specified *your_test_images_path* and *your_submission_path*:  
-    - *on GPU*:   
+3. To run your Docker container replace *your_test_images_path* with path to some test images, *your_submission_path* with path where *submission.csv* to be saved and run one of following commands:  
+    - *To test container on GPU*:   
     ```bash
     $ sudo docker run -e MODEL_RUN_DEVICE='cuda:0' -it --gpus all -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp your_docker_image_name
     ```
-    - *on CPU*:  
+    - *To test container on CPU*:  
     ```bash   
     $ sudo docker run -e MODEL_RUN_DEVICE='cpu'  --rm -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp your_docker_image_name
     ```  

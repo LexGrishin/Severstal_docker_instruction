@@ -55,7 +55,7 @@ Repository contains two folders:
     ```
 
 **How to test your Docker image:**  
-1. To test your Docker container with GPU usage you should install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) first.
+1. To test your Docker image with GPU usage you should install [nvidia-docker](https://github.com/NVIDIA/nvidia-docker) first.
 2. Put test images to some path *your_test_images_path*.
 3. To run Docker container from your Docker image use one of the following commands. Replace *your_test_images_path* with path to some test images, *your_submission_path* with path where *submission.csv* to be saved and *your_docker_image_name* with the name you chose for your Docker image.  
     - *To test container on GPU*:   

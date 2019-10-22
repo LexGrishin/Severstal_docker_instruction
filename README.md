@@ -40,7 +40,7 @@ Repository contains two folders:
 - *example* : Contains an example of using *template* to package up a dummy-model into Docker image which successfully runs on our hardware. 
 
 **Steps to package up your solution into Docker image:**
-1. Install [Docker](https://docs.docker.com/install/) on your PC.
+1. Install [Docker](https://docs.docker.com/install/) on your PC. Version 19.03 is required.
 2. Copy *template* folder to your PC.
 3. Put your solution code, model weights and all necessary files into *template* folder.
 4. Now you should wrap you inference code for Efficiency scoring. Open *app.py* template and place your inference code into `app()` function. 
@@ -60,10 +60,10 @@ Repository contains two folders:
 3. To run your Docker container use command with specified *your_test_images_path* and *your_submission_path*:  
     - *on GPU*:   
     ```bash
-    $ sudo docker run --rm -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp --device=/dev/nvidiactl --device=/dev/nvidia-uvm --device=/dev/nvidia0 --volume-driver nvidia-docker your_docker_image_name
+    $ sudo docker run -e MODEL_RUN_DEVICE='cuda:0' -it --gpus all -v <your_test_images_path>:/usr/src/app/test_images -v <your_submission_path>:/usr/src/app/temp <your_docker_image_name>
     ```
     - *on CPU*:  
-    ```bash
-    $ sudo docker run --rm -v your_test_images_path:/usr/src/app/test_images -v your_submission_path:/usr/src/app/temp your_docker_image_name
+    ```bash   
+    $ sudo docker run -e MODEL_RUN_DEVICE='cpu'  --rm -v <your_test_images_path>:/usr/src/app/test_images -v <your_submission_path>:/usr/src/app/temp <your_docker_image_name>
     ```  
 4. If *app.py* runs successfully, you will see *submission.csv* in *your_submission_path*.
